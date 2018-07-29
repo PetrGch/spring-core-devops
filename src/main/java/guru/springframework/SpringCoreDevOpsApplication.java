@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringCoreDevOpsApplication {
 
 	public static void main(String[] args) {
+		System.out.println("hi there");
 		SpringApplication.run(SpringCoreDevOpsApplication.class, args);
 
 		//this is a whitespace change test
