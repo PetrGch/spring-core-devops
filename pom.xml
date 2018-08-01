@@ -6,7 +6,7 @@
 	<groupId>guru.springframework</groupId>
 	<artifactId>spring-core-devops</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>Spring Core DevOps</name>
 	<description>Spring Core DevOps Course</description>
@@ -76,14 +76,19 @@
 		</dependency>
 	</dependencies>
 	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+	<plugin>
+	    <artifactId>maven-war-plugin</artifactId>
+	    <configuration>
+		<attachClasses>true</attachClasses>
+		<webXml>target/web.xml</webXml>
+		<webResources>
+		    <resource>
+		        <directory>src/main/webapp</directory>
+		        <filtering>true</filtering>
+		    </resource>
+		</webResources>
+	    </configuration>
+</plugin>
 	
 
 </project>
